@@ -1,49 +1,58 @@
-# My Python Module 🚀
+# Oldenburg: Backlink Discovery & Analysis Tool 🔍
 
-Welcome to **My Python Module**! This project is designed to [brief description of what your module does].
+Welcome to **Oldenburg**! This Python module is designed for automating backlink research, helping you find and analyze potential backlink opportunities using Bing search queries.
+
+Named after Henry Oldenburg, a pioneer in scientific peer review, this module simplifies the process of identifying and tracking backlink sources.
 
 ## Features ✨
 
-- **Feature 1**: Explain the first feature. 🎉
-- **Feature 2**: Explain the second feature. 🔥
-- **Feature 3**: Explain the third feature. 🌟
+- **Backlink Discovery**: Find potential websites for backlinking based on customizable search queries. 🔗
+- **Backlink Validation**: Check if a target URL is already linked on potential backlink sites. ✅
+- **CSV Export**: Save results conveniently in a CSV file for further analysis. 📊
 
 ## Installation 💻
 
-You can install the package via pip:
+Install the package via pip:
 
 ```bash
-pip install my_python_module
-Usage 📚
+pip install https://github.com/alexruco/oldenburg
+```
+
+## Usage 📚
 
 Here's a quick example to get you started:
 <!--
 ```python
-from my_python_module import module
+from oldenburg import run_backlink_checker
 
-# Example usage
-result = module.some_function(5, 10)
-print(result)
+# Define your parameters
+domain = "suittest.com"
+search_query = "no-code testing tools site:.es"
+backlink_query = "your backlink query"
+
+# Run the backlink checker
+run_backlink_checker(domain=domain, query=search_query, backlink_query=backlink_query)
 ```
 -->
-Documentation 📖
 
-Documentation is available at [link to documentation].
 Running Tests 🧪
 
 To run the tests, you can use the unittest module or pytest.
 
-bash
 
+<!--
+```bash
 python -m unittest discover tests
 # or
 pytest
+```
+-->
 
 ## Contributing 🤝
 
 We welcome contributions from the community! Here’s how you can get involved:
 
-1. **Report Bugs**: If you find a bug, please open an issue [here](https://github.com/yourusername/my_python_module/issues).
+1. **Report Bugs**: If you find a bug, please open an issue [here](https://github.com/alexruco/oldenburg/issues).
 2. **Suggest Features**: We’d love to hear your ideas! Suggest new features by opening an issue.
 3. **Submit Pull Requests**: Ready to contribute? Fork the repo, make your changes, and submit a pull request. Please ensure your code follows our coding standards and is well-documented.
 4. **Improve Documentation**: Help us improve our documentation. Feel free to make edits or add new content.
@@ -56,7 +65,7 @@ We welcome contributions from the community! Here’s how you can get involved:
 4. Push to the branch: `git push origin my-feature-branch`.
 5. Open a pull request on the original repository.
 
-## WHy "Oldenburg"?
+## Why "Oldenburg"?
 
 Henry Oldenburg FRS was a German theologian, diplomat, and natural philosopher, known as one of the creators of modern scientific peer review. He was one of the foremost intelligencers of 17th-century Europe, with a network of correspondents to rival those of Fabri de Peiresc, Marin Mersenne, and Ismaël Boulliau. 
 
