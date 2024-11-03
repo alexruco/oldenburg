@@ -56,6 +56,10 @@ We welcome contributions from the community! Here’s how you can get involved:
 4. Push to the branch: `git push origin my-feature-branch`.
 5. Open a pull request on the original repository.
 
+## WHy "Oldenburg"?
+
+Henry Oldenburg FRS was a German theologian, diplomat, and natural philosopher, known as one of the creators of modern scientific peer review. He was one of the foremost intelligencers of 17th-century Europe, with a network of correspondents to rival those of Fabri de Peiresc, Marin Mersenne, and Ismaël Boulliau. 
+
 ## License 📄
 
 This project is licensed under the MIT License. Feel free to use, modify, and distribute this software in accordance with the terms outlined in the [LICENSE](LICENSE) file.
