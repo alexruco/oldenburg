@@ -35,7 +35,7 @@ def get_search_results(query, num_pages=3, results_per_page=10):
 
         time.sleep(2)
 
-    print(f"All extracted URLs: {results}")
+    #print(f"All extracted URLs: {results}")
     return results
 
 def find_potential_backlink_sites(domain, query, num_pages=3, results_per_page=10):
@@ -79,5 +79,6 @@ def run_backlink_checker(domain, query, backlink_query, num_pages=3, results_per
     for site in not_linking_to_you:
         print(site)
 
+#print(get_search_results("financial consulting"))
 # Usage
 #run_backlink_checker(domain="suittest.com", query="no-code testing tools site:.es", backlink_query="your backlink query")
