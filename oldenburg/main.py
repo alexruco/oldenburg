@@ -1,9 +1,11 @@
 # oldenburg/main.py
 
+import random
+import time
 import requests
 from bs4 import BeautifulSoup
-import time
-import random
+import urllib.parse
+import base64
 #from utils import save_urls_to_csv, remove_domain_from_results
 from oldenburg.utils import save_urls_to_csv, remove_domain_from_results
 # List of user-agent strings to rotate
@@ -13,8 +15,8 @@ user_agents = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/89.0',
 ]
 
+
 def get_search_results(query, num_pages=3, results_per_page=10):
-    """Performs a multi-page search query on Bing and returns the top result URLs."""
     headers = {'User-Agent': random.choice(user_agents)}
     results = []
 
@@ -22,22 +24,38 @@ def get_search_results(query, num_pages=3, results_per_page=10):
         start_index = page * results_per_page + 1
         search_url = f"https://www.bing.com/search?q={query}&first={start_index}"
         response = requests.get(search_url, headers=headers)
-        #print(f"Response status for page {page + 1}: {response.status_code}")
-        #print("Search URL:", search_url)
-
         soup = BeautifulSoup(response.text, 'html.parser')
+
         for result_item in soup.find_all('li', {'class': 'b_algo'}):
             a_tag = result_item.find('a', href=True)
             if a_tag:
                 link = a_tag['href']
-                results.append(link)
-                #print(f"Extracted URL: {link}")
+                # Check if it's a Bing redirect URL
+                if link.startswith('https://www.bing.com/ck/a'):
+                    parsed_url = urllib.parse.urlparse(link)
+                    query_params = urllib.parse.parse_qs(parsed_url.query)
+                    if 'u' in query_params:
+                        # The 'u' parameter might be base64-encoded
+                        encoded_url = query_params['u'][0]
+                        # Some URLs might have an extra 'a1' prefix
+                        if encoded_url.startswith('a1'):
+                            encoded_url = encoded_url[2:]
+                        try:
+                            decoded_bytes = base64.urlsafe_b64decode(encoded_url + '==')
+                            decoded_url = decoded_bytes.decode('utf-8')
+                            results.append(decoded_url)
+                        except Exception as e:
+                            print(f"Error decoding URL: {e}")
+                            # If decoding fails, you might want to skip this link or handle it differently
+                    else:
+                        # If 'u' parameter is not present, you might want to append the original link or skip it
+                        results.append(link)
+                else:
+                    results.append(link)
 
         time.sleep(2)
 
-    #print(f"All extracted URLs: {results}")
     return results
-
 def find_potential_backlink_sites(domain, query, num_pages=3, results_per_page=10):
     """Find sites to target for backlinks by searching with the provided query."""
     print(f"Searching potential backlink sites with query: {query}")
@@ -79,6 +97,6 @@ def run_backlink_checker(domain, query, backlink_query, num_pages=3, results_per
     for site in not_linking_to_you:
         print(site)
 
-#print(get_search_results("financial consulting"))
+print(get_search_results("financial consulting"))
 # Usage
 #run_backlink_checker(domain="suittest.com", query="no-code testing tools site:.es", backlink_query="your backlink query")
