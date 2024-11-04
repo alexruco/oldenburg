@@ -97,6 +97,6 @@ def run_backlink_checker(domain, query, backlink_query, num_pages=3, results_per
     for site in not_linking_to_you:
         print(site)
 
-print(get_search_results("financial consulting"))
+#print(get_search_results("financial consulting"))
 # Usage
 #run_backlink_checker(domain="suittest.com", query="no-code testing tools site:.es", backlink_query="your backlink query")
