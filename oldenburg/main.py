@@ -4,8 +4,8 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import random
-from utils import save_urls_to_csv, remove_domain_from_results
-
+#from utils import save_urls_to_csv, remove_domain_from_results
+from oldenburg.utils import save_urls_to_csv, remove_domain_from_results
 # List of user-agent strings to rotate
 user_agents = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
@@ -80,4 +80,4 @@ def run_backlink_checker(domain, query, backlink_query, num_pages=3, results_per
         print(site)
 
 # Usage
-# run_backlink_checker(domain="suittest.com", query="no-code testing tools site:.es", backlink_query="your backlink query")
+run_backlink_checker(domain="suittest.com", query="no-code testing tools site:.es", backlink_query="your backlink query")
