@@ -1,6 +1,6 @@
 # Oldenburg: Backlink Discovery & Analysis Tool 🔍
 
-Welcome to **Oldenburg**! This Python module is designed for automating backlink research, helping you find and analyze potential backlink opportunities using Bing search queries.
+Welcome to **Oldenburg**! This Python module is designed for automating web search and backlink research, helping you find and analyze potential backlink opportunities using Bing search queries.
 
 Named after Henry Oldenburg, a pioneer in scientific peer review, this module simplifies the process of identifying and tracking backlink sources.
 
@@ -15,7 +15,7 @@ Named after Henry Oldenburg, a pioneer in scientific peer review, this module si
 Install the package via pip:
 
 ```bash
-pip install https://github.com/alexruco/oldenburg
+pip install https://github.com/alexruco/oldenburg#main@egg=oldenburg
 ```
 
 ## Usage 📚
