@@ -80,4 +80,4 @@ def run_backlink_checker(domain, query, backlink_query, num_pages=3, results_per
         print(site)
 
 # Usage
-run_backlink_checker(domain="suittest.com", query="no-code testing tools site:.es", backlink_query="your backlink query")
+#run_backlink_checker(domain="suittest.com", query="no-code testing tools site:.es", backlink_query="your backlink query")
