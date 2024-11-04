@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="oldenburg",  # Name of your package
-    version="0.1.0",  # Version of your package
+    version="0.1.1",  # Version of your package
     author="Alex Ruco",  # Author name
     author_email="alex@ruco.pt",  # Author email
     description="Get search results and potential backlinks.",  # Short description of the package
