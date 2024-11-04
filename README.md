@@ -15,7 +15,7 @@ Named after Henry Oldenburg, a pioneer in scientific peer review, this module si
 Install the package via pip:
 
 ```bash
-pip install https://github.com/alexruco/oldenburg#main@egg=oldenburg
+pip install git+https://github.com/alexruco/oldenburg#main@egg=oldenburg
 ```
 
 ## Usage 📚
