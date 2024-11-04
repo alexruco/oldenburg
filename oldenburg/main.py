@@ -22,8 +22,8 @@ def get_search_results(query, num_pages=3, results_per_page=10):
         start_index = page * results_per_page + 1
         search_url = f"https://www.bing.com/search?q={query}&first={start_index}"
         response = requests.get(search_url, headers=headers)
-        print(f"Response status for page {page + 1}: {response.status_code}")
-        print("Search URL:", search_url)
+        #print(f"Response status for page {page + 1}: {response.status_code}")
+        #print("Search URL:", search_url)
 
         soup = BeautifulSoup(response.text, 'html.parser')
         for result_item in soup.find_all('li', {'class': 'b_algo'}):
@@ -31,7 +31,7 @@ def get_search_results(query, num_pages=3, results_per_page=10):
             if a_tag:
                 link = a_tag['href']
                 results.append(link)
-                print(f"Extracted URL: {link}")
+                #print(f"Extracted URL: {link}")
 
         time.sleep(2)
 
